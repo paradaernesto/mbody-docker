@@ -6,19 +6,12 @@ All the docker files to deploy [Apache Tomcat 7](http://tomcat.apache.org/downlo
 ### Usage
 
 ```
-# Place your war file(s) in local directory called deployment and add it as a volume 
 #
 # Optionally specify JAVA_OPTS to be added to default JAVA_OPTS for tomcat
 #
 # Optionally specify a custom Xmx parameter to replace default setting for tomcat
 #
-# Optionally add a startup script at deployment/init.sh and it will be run inside the 
-#     container before tomcat comes up
-#
-$docker run --cap-add SYS_PTRACE -it -p 8080:8080 -e JAVA_OPTS='-Dsome.property=value' 
-    -e Xmx=2048m -v deployment:/deployment maluuba/tomcat7
 ```
-Note: Add sys trace capacity to get arround the tomcat init.d script bug. See [Docker issue 6800](https://github.com/docker/docker/issues/6800) for details.
 
 Then point your browser at [http://localhost:8080/](http://localhost:8080/)
 
@@ -28,19 +21,15 @@ or [http://192.168.59.103:8080/](http://192.168.59.103:8080/) if you are using b
 
 To build the image, simply invoke
 
-    docker build github.com/maluuba/docker-tomcat7
+    docker build https://github.com/paradaernesto/mbody-docker
 
-A prebuilt container is also available in the docker index
-
-    docker pull maluuba/tomcat7
-    
 ## Author
 
-  * Usman Ismail (<usman.ismail@maluuba.com>)
+  * Ernesto PArada (<ernesto.parada@patagonian.it>)
 
 ## LICENSE
 
-Copyright 2014 Maluuba
+Copyright 2016
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
