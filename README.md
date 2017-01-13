@@ -21,8 +21,12 @@ or [http://192.168.59.103:8080/](http://192.168.59.103:8080/) if you are using b
 
 To build the image, simply invoke
 
-    docker build https://github.com/paradaernesto/mbody-docker
+    docker build -eparada/mbody  https://github.com/paradaernesto/mbody-docker
+    
+To create a container from an image
 
+    docker run -p 8080:8080 -d -t -i --name mbody-tracker eparada/mbody 
+    
 ## Author
 
   * Ernesto PArada (<ernesto.parada@patagonian.it>)
